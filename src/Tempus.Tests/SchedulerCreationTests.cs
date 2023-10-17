@@ -8,7 +8,7 @@ namespace Tempus.Tests
 {
     public class SchedulerCreationTests
     {
-        private static IEnumerable<object[]> GetSchedulers()
+        public static IEnumerable<object[]> GetSchedulers()
         {
             yield return new object[] { new Scheduler() };
             yield return new object[] { new TestScheduler() };
@@ -23,7 +23,7 @@ namespace Tempus.Tests
                 ct => Task.CompletedTask,
                 (failureContext, ct) => Task.CompletedTask);
 
-            action.ShouldThrow<ArgumentOutOfRangeException>();
+            action.Should().Throw<ArgumentOutOfRangeException>();
         }
         
         [Theory]
@@ -34,7 +34,7 @@ namespace Tempus.Tests
                 ct => Task.CompletedTask,
                 (failureContext, ct) => Task.CompletedTask);
 
-            action.ShouldThrow<ArgumentOutOfRangeException>();
+            action.Should().Throw<ArgumentOutOfRangeException>();
         }
         
         [Theory]
@@ -45,7 +45,7 @@ namespace Tempus.Tests
                 ct => Task.CompletedTask,
                 (failureContext, ct) => Task.CompletedTask);
 
-            action.ShouldThrow<ArgumentOutOfRangeException>();
+            action.Should().Throw<ArgumentOutOfRangeException>();
         }
         
         [Theory]
@@ -57,7 +57,7 @@ namespace Tempus.Tests
                 (failureContext, ct) => Task.CompletedTask,
                 TimeSpan.FromSeconds(5));
 
-            action.ShouldThrow<ArgumentOutOfRangeException>();
+            action.Should().Throw<ArgumentOutOfRangeException>();
         }
         
         [Theory]
@@ -68,7 +68,7 @@ namespace Tempus.Tests
                 null,
                 (failureContext, ct) => Task.CompletedTask);
 
-            action.ShouldThrow<ArgumentNullException>();
+            action.Should().Throw<ArgumentNullException>();
         }
         
         [Theory]
@@ -79,7 +79,7 @@ namespace Tempus.Tests
                 ct => Task.CompletedTask,
                 null);
 
-            action.ShouldThrow<ArgumentNullException>();
+            action.Should().Throw<ArgumentNullException>();
         }
     }
 }

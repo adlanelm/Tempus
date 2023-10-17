@@ -249,7 +249,7 @@ namespace Tempus.Tests
 
             Func<Task> advanceAction = () => scheduler.AdvanceBy(TimeSpan.FromDays(-51));
 
-            advanceAction.ShouldThrow<ArgumentOutOfRangeException>();
+            advanceAction.Should().ThrowAsync<ArgumentOutOfRangeException>();
         }
         
         [Fact]
@@ -258,7 +258,7 @@ namespace Tempus.Tests
             var initPoint = DateTimeOffset.Now.AddYears(-1);
             var scheduler = new TestScheduler(initPoint);
 
-            DateTimeOffset timeDuringExecution;
+            DateTimeOffset timeDuringExecution = DateTimeOffset.MinValue;
 
             var scheduledTask = scheduler.Schedule(TimeSpan.FromSeconds(50),
                 ct =>
