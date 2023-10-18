@@ -4,21 +4,37 @@
     <PackageId>Tempus</PackageId>
     <Authors>Maxim Cherednik</Authors>
     <Description>A simple async/await, unit-test friendly timer implementation</Description>
-    <PackageLicenseUrl>https://github.com/maxcherednik/Tempus/blob/master/LICENSE</PackageLicenseUrl>
+    <License>https://github.com/maxcherednik/Tempus/blob/master/LICENSE</License>
     <PackageProjectUrl>https://github.com/maxcherednik/Tempus</PackageProjectUrl>
-    <PackageTags>timer scheduler unit-testing TDD netstandard</PackageTags>
+    <PackageTags>timer scheduler unit-testing TDD</PackageTags>
     <Title>Tempus</Title>
     <Owners>maxim.cherednik</Owners>
     <Copyright>Copyright 2017 Maxim Cherednik</Copyright>
     <Summary>A simple async/await, unit-test friendly timer implementation</Summary>
-    <PackageIconUrl>https://github.com/maxcherednik/Tempus/blob/master/content/images/TempusLogo.png?raw=true</PackageIconUrl>
+    <PackageIcon>TempusLogoBig.png</PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>Latest</LangVersion>
-    <DocumentationFile>bin\Debug\netstandard1.1\Tempus.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net6.0\Tempus.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>Latest</LangVersion>
-    <DocumentationFile>bin\Release\netstandard1.1\Tempus.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net6.0\Tempus.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\content\images\TempusLogoBig.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 </Project>
